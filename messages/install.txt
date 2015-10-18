@@ -1,0 +1,11 @@
+SublimeRubycritic
+================================
+
+This plugin for Sublime provides an interface to critic you ruby files with rubycritic, and opens the critic in the selected file.
+
+** IMPORTANT! **
+
+Before this plugin will activate, you *must*
+follow the installation instructions here:
+
+https://github.com/pedrocarmona/sublimerubycritic

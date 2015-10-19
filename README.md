@@ -20,7 +20,7 @@ Before using this plugin, you must ensure that `rubycritic` is installed on your
 1. test in sublime console (View > show console)
   ```
   import os
-  s.system("rubycritic")
+  os.system("rubycritic")
   ```
 
 1. If is result 0, then there is no need to do the next steps. 

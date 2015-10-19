@@ -19,12 +19,13 @@ Before using this plugin, you must ensure that `rubycritic` is installed on your
   ```
 1. test in sublime console (View > show console)
   ```
-  gem install rubycritic
   import os
   s.system("rubycritic")
   ```
 
-1. should give result 0, if result is 32512, please do these istructions in you command line:
+1. If is result 0, then there is no need to do the next steps. 
+ 
+1. If result is 32512, then sublime cannot find rubycritic. Please do these instructions in you command line:
   ```
   which rubycritic
   ```

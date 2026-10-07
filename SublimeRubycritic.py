@@ -18,11 +18,17 @@ class NewCriticCommand(sublime_plugin.TextCommand):
 class GenerateCritic(threading.Thread):
     def __init__(self, dic):
       self.sublime_vars = dic
-      self.folder = self.sublime_vars['folder']
+      if 'folder' not in self.sublime_vars:
+        sublime.error_message("[SublimeRubycritic] Please open a project folder first.")
+        self.folder = None
+      else:
+        self.folder = self.sublime_vars['folder']
       self.result = None
       threading.Thread.__init__(self)
 
     def run(self):
+      if self.folder is None:
+        return
       os.chdir(self.folder)
       p = subprocess.Popen(['rubycritic', 'app', 'lib'], stdout=subprocess.PIPE,
                                          stderr=subprocess.PIPE)
@@ -40,6 +46,3 @@ class GenerateCritic(threading.Thread):
 
       self.result = True
       return
-
-
-
